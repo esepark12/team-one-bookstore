@@ -1,0 +1,34 @@
+{
+  "books": [
+    {
+      "title": "Maria",
+      "genre": "maria",
+      "publishedDate": 1234,
+      "id": 1
+    },
+    {
+      "title": "Alex2",
+      "genre": "alex",
+      "publishedDate": 1234,
+      "id": 2
+    },
+    {
+      "title": "Maria3",
+      "genre": "maria",
+      "publishedDate": 1234,
+      "id": 3
+    },
+    {
+      "title": "Alex4",
+      "genre": "alex",
+      "publishedDate": 1234,
+      "id": 4
+    },
+    {
+      "title": "Testbook",
+      "publishedDate": "1235",
+      "genre": "fantasy",
+      "id": 5
+    }
+  ]
+}
