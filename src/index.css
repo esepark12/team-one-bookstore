@@ -13,21 +13,28 @@ code {
 }
 /* App.js */
 .app-header {
+  display: block;
+  width: 450px;
+  padding: 30px;
+  margin: 30px auto;
+  background-color: lightblue;
   text-align: center;
-  margin: 30px 0px;
 }
+
 .app-header a{
-  color: black;
+  /*color: black;*/
+  color: white;
 }
 .app-header a:hover {
-  color: blue;
+  color: rgb(90, 192, 226);
 }
 /* BookstoreHome.js */
 .book-store{
   display: block;
   margin: auto;
-  padding-top: 20px;
+  padding: 20px 0px;
   width: 80%;
+  min-width: 500px;
 }
 /* BookForm.js */
 .book-form {
@@ -35,7 +42,11 @@ code {
   margin: auto;
   padding-top: 20px;
   width: 50%;
-  min-width: 200px;
+  max-width: 500px;
+  min-width: 400px;
+}
+.form-group {
+  padding: 20px 0px;
 }
 .book-form label{
   font-weight: bold;
@@ -59,7 +70,7 @@ code {
 }
 /* BookTable.js */
 .book-table {
-  min-width: 200px;
+  
 }
 .table-header {
   font-weight: bolder;
@@ -68,20 +79,57 @@ code {
 .book-index {
   padding: 10px 16px;
 }
-.deleteButton {
-  background-color: red
+hr.index-separator {
+  border-bottom: 1px solid #d6d1c6;
+}
+.book-title-index{
+  display: flex;
+  /* justify-content: center;  align horizontal */
+  align-items: center; /* align vertical */
+}
+.detail-header button{
+  background-color: rgb(90, 192, 226);
+  border-color: rgb(90, 192, 226);
+}
+.delete-header button {
+  background-color: rgb(248, 80, 19);
+  border-color: rgb(248, 80, 19);
+}
+.delete-header button:hover{
+  background-color: rgb(91, 13, 13)
 }
 
 /* AddSearch.js */
 .addSearch {
-  
+
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  align-content: center;
+
 }
 .sort-genre{
-  margin: 20px 0px;
+  padding: 30px;
+  /*margin: 20px 0px;*/
 }
+.sort-genre button{
+  background-color: rgb(90, 192, 226);
+  border-color: rgb(90, 192, 226);
+}
+
 .addButton {
-  margin-left: auto;
   text-align: center;
+  padding: 30px;
+}
+.addButton button{
+  background-color: rgb(90, 192, 226);
+  border-color: rgb(90, 192, 226);
 }
 
 /* BookDetail.js */
+.div-center{
+  display: flex;
+  /* justify-content: center;  align horizontal */
+  align-items: center; /* align vertical */
+  justify-content: end;
+}

@@ -10,17 +10,17 @@ const AddSearch = (props) => {
     }
 
     return ( 
-        <Row className="addSearch">
-            <Col className="sort-genre">
+        <Row xs={12} className="addSearch">
+            <Col xs={8} className="sort-genre">
                 <Form>
-                    <Row className="d-flex align-items-end">
-                        <Col>
+                    <Row xs={12}>
+                        <Col xs={6}>
                         <Form.Group controlId="bookGenre">
                             <Form.Control type="text" placeholder="Type Genre" name="genre"
                                 value={genre} onChange={props.testGenre} />
                         </Form.Group>
                         </Col>
-                        <Col>
+                        <Col xs={6}>
                         <Form.Group controlId="searchButton">
                             <Button variant="primary" value={genre} onClick={props.searchByGenre}>
                                 Search
@@ -29,8 +29,8 @@ const AddSearch = (props) => {
                         </Col>
                     </Row>
                 </Form>
-            </Col>
-            <Col className="addButton">
+            </Col>          
+            <Col xs={4} className="addButton">
                 <Button onClick={()=>handleClick("/create")}>
                     Add Book
                 </Button>

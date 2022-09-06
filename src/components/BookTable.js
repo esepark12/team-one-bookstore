@@ -7,35 +7,38 @@ class BookTable extends React.Component {
     render(){
         return (   
             <Row className="book-table">
-                <Row className="table-header">
-                    <Col xs={6} className="book-name-header">
+                <Row xs={12} className="table-header">
+                    <Col xs={6} className="book-title-header">
                     Book Title
                     </Col>
-                    <Col className="detail-header">
+                    <Col xs={3} className="detail-header">
                     Detail
                     </Col>
-                    <Col className="delete-header">
+                    <Col xs={3} className="delete-header">
                     Delete
                     </Col>
                 </Row>
                 <hr />
                 {this.props.books.map((book)=>(
-                    <Row className="book-index" key={book.id}>
-                        <Col xs={6}>
+                    <div>
+                    <Row xs={12} className="book-index" key={book.id}>
+                        <Col xs={6} className="book-title-index">
                         {book.title}
                         </Col>
-                        <Col className="detail-header">
+                        <Col xs={3} className="detail-header">
                             <Link to={`/books/${book.id}`}>
                             <Button>
                                 Detail
                             </Button></Link> 
                         </Col>
-                        <Col className="delete-header">
-                            <Button className="deleteButton" onClick={this.props.handleDelete} value={book.id} >
+                        <Col xs={3} className="delete-header">
+                            <Button onClick={this.props.handleDelete} value={book.id} >
                                 Delete
                             </Button>
                         </Col>
                     </Row>
+                    <hr class="index-separator"/>
+                    </div>
                 ))}
             </Row>
         );

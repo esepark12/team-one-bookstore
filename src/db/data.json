@@ -35,6 +35,12 @@
       "publishedDate": "1236",
       "genre": "sci-fi",
       "id": 6
+    },
+    {
+      "title": "Test3",
+      "publishedDate": "1235",
+      "genre": "fantasy",
+      "id": 7
     }
   ],
   "search": [

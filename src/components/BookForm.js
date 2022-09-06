@@ -27,6 +27,9 @@ const BookForm = () => {
     }
 
     return ( 
+      <div>
+        <h2>Add book</h2>
+        <hr />
         <Form className="book-form" onSubmit={handleSubmit}>
           <Form.Group controlId="bookTitle">
             <Form.Label>Title:</Form.Label>
@@ -52,6 +55,7 @@ const BookForm = () => {
             </Col>
           </Row>
         </Form>
+      </div>
     );
 }
  
