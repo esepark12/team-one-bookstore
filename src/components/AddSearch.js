@@ -3,7 +3,7 @@ import {useState} from 'react'
 import {useNavigate} from "react-router-dom";
 const AddSearch = (props) => {
 
-    const [genre, setGenre] = useState("");
+    const genre = props.genre
     const nav = useNavigate();
 
     const handleClick = (path) =>{
@@ -18,7 +18,7 @@ const AddSearch = (props) => {
                         <Col>
                         <Form.Group controlId="bookGenre">
                             <Form.Control type="text" placeholder="Type Genre" name="genre"
-                                value={genre} onChange={(e)=> setGenre(e.target.value)} />
+                                value={genre} onChange={props.testGenre} />
                         </Form.Group>
                         </Col>
                         <Col>

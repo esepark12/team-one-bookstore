@@ -13,7 +13,10 @@ class BookstoreHome extends React.Component {
             "genre": "initialGenre",
             "publishedDate": 1230,
             "id": 0
-          }]
+          }],
+        genre: "",
+        displaySearch: false,
+        displayGenre: ""
     }
     handleDelete = (e) => {
         if (e) e.preventDefault();
@@ -27,6 +30,12 @@ class BookstoreHome extends React.Component {
             console.log("navigate to main!")
             this.loadBooks();
         })
+    }
+
+    testGenre = (e) => {
+        let newGenre = e.target.value
+        this.setState({genre: newGenre})
+
     }
 
     searchByGenre = (e) => {
@@ -44,7 +53,14 @@ class BookstoreHome extends React.Component {
         })
         .catch((error) => {
           console.error('Error:', error);
-      });
+        });
+
+    
+        this.setState({displayGenre: genre})
+        this.setState({displaySearch: true})
+        //clear genre input field
+        this.setState({genre: ""})
+
     }
 
     loadBooks() {
@@ -65,7 +81,12 @@ class BookstoreHome extends React.Component {
         return ( 
             <div className="book-store">
                 <AddSearch books={this.state.books} 
-                    searchByGenre = {this.searchByGenre}/>
+                    searchByGenre = {this.searchByGenre}
+                    testGenre = {this.testGenre}
+                    genre = {this.state.genre}/>
+                {this.state.displaySearch? 
+                <h2>Search by Genre: { this.state.displayGenre}</h2>
+                : null}
                 {!this.state.loading && <BookTable books={this.state.books} 
                                             handleDelete={this.handleDelete}/>}
             </div>
