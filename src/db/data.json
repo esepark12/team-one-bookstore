@@ -29,6 +29,32 @@
       "publishedDate": "1235",
       "genre": "fantasy",
       "id": 5
+    },
+    {
+      "title": "Testing",
+      "publishedDate": "1235",
+      "genre": "fantasy",
+      "id": 6
+    }
+  ],
+  "search": [
+    {
+      "title": "SearchMaria",
+      "genre": "maria",
+      "publishedDate": 1234,
+      "id": 1
+    },
+    {
+      "title": "SearchAlex2",
+      "genre": "alex",
+      "publishedDate": 1234,
+      "id": 2
+    },
+    {
+      "title": "SearchMaria3",
+      "genre": "maria",
+      "publishedDate": 1234,
+      "id": 3
     }
   ]
 }

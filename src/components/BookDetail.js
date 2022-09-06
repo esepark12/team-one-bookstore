@@ -1,5 +1,5 @@
 import useFetch from './useFetch'
-import { useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {Button, Row} from 'react-bootstrap'
 import {useNavigate} from "react-router-dom";
 
@@ -18,7 +18,7 @@ const BookDetail = () => {
     return ( 
         <div className="book-detail">
             <h2>Book detail page</h2>
-            {book && (
+            {book && !error && (
                 <div>
                    <Row>
                         {book.title}

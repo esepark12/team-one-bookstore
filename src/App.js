@@ -5,22 +5,27 @@ import {Container, Row, Col} from 'react-bootstrap'
 import BookstoreHome from './components/BookstoreHome'
 import BookDetail from './components/BookDetail';
 import BookForm from './components/BookForm';
-//import useFetch from './components/useFetch'
+import {Link} from 'react-router-dom';
+
 function App() {
-  //const {data:books, error} = useFetch('http://localhost:8000/books');
-  //console.log(books)
   return (
     <Container>
     <Router>
       <Row><Col>
         <div className="App">
-          <h1>Team One Bookstore</h1>
+          
+          <h1>
+            <Link to = "/" onClick={() => window.location.reload()} style={{ textDecoration: 'none', color:"black" }}>
+            Team One Bookstore
+            </Link>
+          </h1>
+
         </div>
       </Col></Row>
       <Routes>
-      <Route exact path="/" element={<BookstoreHome />}></Route>
-      <Route path="/create" element={<BookForm/>} />
-      <Route path="/books/:id" element={<BookDetail />} />
+        <Route exact path="/" element={<BookstoreHome />}></Route>
+        <Route path="/create" element={<BookForm/>} />
+        <Route path="/books/:id" element={<BookDetail />} />
       </Routes>
     </Router>
     </Container>

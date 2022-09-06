@@ -3,18 +3,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 class BookTable extends React.Component {
-
-    /*
-    const handleDelete = (bookId) => {
-        
-        fetch('http://localhost:8000/books/'+bookId, {
-            method: 'DELETE'
-        }).then(()=>{
-            console.log("navigate to main!")
-            nav('/');
-        })
-    }
-    */
+    
     render(){
         return (   
             <Row className="book-table">

@@ -1,17 +1,10 @@
 import { Form, Button, Row, Col} from 'react-bootstrap'
 import {useState} from 'react'
 import {useNavigate} from "react-router-dom";
-
-const AddSearch = () => {
+const AddSearch = (props) => {
 
     const [genre, setGenre] = useState("");
     const nav = useNavigate();
-
-    const handleSubmit = (e) => {
-        //e.preventDefault();
-        const genreType = {genre};
-    }
-
 
     const handleClick = (path) =>{
         nav(path);
@@ -20,7 +13,7 @@ const AddSearch = () => {
     return ( 
         <Row>
             <Col sm={5} className="sort-genre">
-                <Form onSubmit={handleSubmit}>
+                <Form>
                     <Row className="d-flex align-items-end">
                         <Col>
                         <Form.Group controlId="bookGenre">
@@ -30,7 +23,7 @@ const AddSearch = () => {
                         </Col>
                         <Col>
                         <Form.Group controlId="searchButton">
-                            <Button variant="primary" type="submit">
+                            <Button variant="primary" value={genre} onClick={props.searchByGenre}>
                                 Search
                             </Button>
                         </Form.Group>

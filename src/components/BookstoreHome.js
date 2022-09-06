@@ -1,15 +1,10 @@
-//import {Button, Row, Col} from 'react-bootstrap'
-import {useState} from 'react'
 import React from 'react'
 import AddSearch from './AddSearch'
-import useFetch from './useFetch'
 import BookTable from './BookTable'
 
 const SERVICE_URL = "http://localhost:8000"
 class BookstoreHome extends React.Component {
 
-    //const {data:books, error} = useFetch('http://localhost:8000/books');
-    //console.log(books);
     state = {
         loading: false,
         books: [
@@ -25,13 +20,31 @@ class BookstoreHome extends React.Component {
 
         let bookId = e.target.value
         
-        fetch('http://localhost:8000/books/'+bookId, {
+        fetch(SERVICE_URL+'/books/'+bookId, {
             method: 'DELETE'
         }).then(()=>{
             console.log(bookId)
             console.log("navigate to main!")
             this.loadBooks();
         })
+    }
+
+    searchByGenre = (e) => {
+        //if (e) e.preventDefault();
+        let genre = e.target.value
+        console.log("Searched by genre: "+ genre)
+        //fetch(SERVICE_URL+'/books/'+genre) //change back to this later(response must be in List form!!)
+        fetch(SERVICE_URL+'/search')
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+          this.setState(
+            { books : data}
+          )
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+      });
     }
 
     loadBooks() {
@@ -51,7 +64,8 @@ class BookstoreHome extends React.Component {
     render() {
         return ( 
             <div className="book-store">
-                <AddSearch />
+                <AddSearch books={this.state.books} 
+                    searchByGenre = {this.searchByGenre}/>
                 {!this.state.loading && <BookTable books={this.state.books} 
                                             handleDelete={this.handleDelete}/>}
             </div>
