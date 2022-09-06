@@ -12,7 +12,7 @@ const BookForm = () => {
         e.preventDefault(); //prevent refresh of page when submit button is pressed
         const book = {title, publishedDate, genre};
         
-        fetch('http://localhost:8000/books', {
+        fetch('/books', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(book)

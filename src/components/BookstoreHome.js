@@ -2,7 +2,7 @@ import React from 'react'
 import AddSearch from './AddSearch'
 import BookTable from './BookTable'
 
-const SERVICE_URL = "http://localhost:8000"
+//const SERVICE_URL = "http://localhost:8000"
 class BookstoreHome extends React.Component {
 
     state = {
@@ -23,7 +23,7 @@ class BookstoreHome extends React.Component {
 
         let bookId = e.target.value
         
-        fetch(SERVICE_URL+'/books/'+bookId, {
+        fetch('/books/'+bookId, {
             method: 'DELETE'
         }).then(()=>{
             console.log("Deleted the book")
@@ -42,7 +42,7 @@ class BookstoreHome extends React.Component {
         let genre = e.target.value
         console.log("Searched by genre: "+ genre)
         //fetch(SERVICE_URL+'/books/'+genre) //change back to this later(response must be in List form!!)
-        fetch(SERVICE_URL+'/'+genre)
+        fetch('/'+genre)
         .then(response => response.json())
         .then(data => {
           //console.log('Success:', data);
@@ -65,7 +65,7 @@ class BookstoreHome extends React.Component {
     loadBooks() {
         this.setState({ loading: true })
         console.log("Loading books")
-        fetch(SERVICE_URL + "/books")
+        fetch("/books")
           .then(data => data.json())
           .then(data => this.setState(
             { books: data, loading: false }

@@ -6,7 +6,7 @@ import {useNavigate} from "react-router-dom";
 const BookDetail = () => {
 
     const {id} = useParams();
-    const {data: book, error} =useFetch('http://localhost:8000/books/'+id);
+    const {data: book, error} =useFetch('/books/'+id);
     //const book = "";
     
     const nav = useNavigate();
