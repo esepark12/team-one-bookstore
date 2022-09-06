@@ -8,30 +8,30 @@ class BookTable extends React.Component {
         return (   
             <Row className="book-table">
                 <Row className="table-header">
-                    <Col sm={8} className="book-name-header">
-                    Book Name
+                    <Col xs={6} className="book-name-header">
+                    Book Title
                     </Col>
-                    <Col sm={2} className="detail-header">
+                    <Col className="detail-header">
                     Detail
                     </Col>
-                    <Col sm={2} className="delete-header">
+                    <Col className="delete-header">
                     Delete
                     </Col>
                 </Row>
                 <hr />
                 {this.props.books.map((book)=>(
                     <Row className="book-index" key={book.id}>
-                        <Col sm={8}>
+                        <Col xs={6}>
                         {book.title}
                         </Col>
-                        <Col sm={2} className="detail-header">
+                        <Col className="detail-header">
                             <Link to={`/books/${book.id}`}>
                             <Button>
                                 Detail
                             </Button></Link> 
                         </Col>
-                        <Col sm={2} className="delete-header">
-                            <Button onClick={this.props.handleDelete} value={book.id}>
+                        <Col className="delete-header">
+                            <Button className="deleteButton" onClick={this.props.handleDelete} value={book.id} >
                                 Delete
                             </Button>
                         </Col>

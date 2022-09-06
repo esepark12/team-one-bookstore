@@ -1,4 +1,4 @@
-import { Form, Button, Row, Col} from 'react-bootstrap'
+import { Form, Button, ButtonGroup, Row, Col} from 'react-bootstrap';
 import {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 
@@ -21,9 +21,13 @@ const BookForm = () => {
             nav('/'); //redirect to main page
         })
     }
+    const handleCancel = (path) =>{
+      console.log("Adding book canceled")
+      nav(path);
+    }
 
     return ( 
-        <Form className="bookForm" onSubmit={handleSubmit}>
+        <Form className="book-form" onSubmit={handleSubmit}>
           <Form.Group controlId="bookTitle">
             <Form.Label>Title:</Form.Label>
             <Form.Control type="text" placeholder="Title" name="bookTitle"
@@ -37,9 +41,16 @@ const BookForm = () => {
           <Form.Group controlId="bookGenre">
             <Form.Label>Genre:</Form.Label>
             <Form.Control type="text" onChange={(e)=>setGenre(e.target.value)} placeholder="Genre" name="bookGenre"
-              value={genre} />
+              value={genre} required/>
           </Form.Group>
-          <Button variant="primary" type="submit">Submit</Button>
+          <Row className="formButtons">
+            <Col>
+              <ButtonGroup className="d-flex">
+              <Button className="cancelButton" variant="primary" type="button" onClick={()=>handleCancel('/')}>Cancel</Button>
+              <Button className="submitButton" variant="primary" type="submit">Submit</Button>
+              </ButtonGroup>
+            </Col>
+          </Row>
         </Form>
     );
 }

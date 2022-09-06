@@ -1,5 +1,4 @@
 import { Form, Button, Row, Col} from 'react-bootstrap'
-import {useState} from 'react'
 import {useNavigate} from "react-router-dom";
 const AddSearch = (props) => {
 
@@ -11,8 +10,8 @@ const AddSearch = (props) => {
     }
 
     return ( 
-        <Row>
-            <Col sm={5} className="sort-genre">
+        <Row className="addSearch">
+            <Col className="sort-genre">
                 <Form>
                     <Row className="d-flex align-items-end">
                         <Col>
@@ -31,9 +30,9 @@ const AddSearch = (props) => {
                     </Row>
                 </Form>
             </Col>
-            <Col sm={4} className="addButton">
+            <Col className="addButton">
                 <Button onClick={()=>handleClick("/create")}>
-                    Add Employee
+                    Add Book
                 </Button>
             </Col>
         </Row>

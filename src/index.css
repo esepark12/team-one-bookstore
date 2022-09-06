@@ -11,3 +11,77 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* App.js */
+.app-header {
+  text-align: center;
+  margin: 30px 0px;
+}
+.app-header a{
+  color: black;
+}
+.app-header a:hover {
+  color: blue;
+}
+/* BookstoreHome.js */
+.book-store{
+  display: block;
+  margin: auto;
+  padding-top: 20px;
+  width: 80%;
+}
+/* BookForm.js */
+.book-form {
+  display: block;
+  margin: auto;
+  padding-top: 20px;
+  width: 50%;
+  min-width: 200px;
+}
+.book-form label{
+  font-weight: bold;
+}
+.book-form .formButtons {
+  
+  margin: 20px 0px;
+  text-align: center;
+  width: 100%
+
+}
+.book-form .formButtons .submitButton {
+  padding-right: 10px
+}
+.book-form .formButtons .cancelButton{
+  padding-left: 10px;
+  background-color: red;
+}
+.book-form .formButtons .cancelButton:hover {
+  background-color: rgb(199, 20, 20);
+}
+/* BookTable.js */
+.book-table {
+  min-width: 200px;
+}
+.table-header {
+  font-weight: bolder;
+  font-size: larger;
+}
+.book-index {
+  padding: 10px 16px;
+}
+.deleteButton {
+  background-color: red
+}
+
+/* AddSearch.js */
+.addSearch {
+  
+}
+.sort-genre{
+  margin: 20px 0px;
+}
+.addButton {
+  margin-left: auto;
+  text-align: center;
+}
+
+/* BookDetail.js */

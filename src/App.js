@@ -8,14 +8,19 @@ import BookForm from './components/BookForm';
 import {Link} from 'react-router-dom';
 
 function App() {
+  const handleReload = () => {
+    const location =  window.location.pathname
+    if (location === '/') window.location.reload()
+    //else do nothing cuz <Link to='/' /> will handle that
+  }
   return (
     <Container>
     <Router>
       <Row><Col>
-        <div className="App">
+        <div className="app-header">
           
           <h1>
-            <Link to = "/" onClick={() => window.location.reload()} style={{ textDecoration: 'none', color:"black" }}>
+            <Link to = "/" onClick={handleReload} style={{"textDecoration": 'none'}}>
             Team One Bookstore
             </Link>
           </h1>

@@ -26,8 +26,7 @@ class BookstoreHome extends React.Component {
         fetch(SERVICE_URL+'/books/'+bookId, {
             method: 'DELETE'
         }).then(()=>{
-            console.log(bookId)
-            console.log("navigate to main!")
+            console.log("Deleted the book")
             this.loadBooks();
         })
     }
@@ -39,14 +38,14 @@ class BookstoreHome extends React.Component {
     }
 
     searchByGenre = (e) => {
-        //if (e) e.preventDefault();
+        if (e) e.preventDefault();
         let genre = e.target.value
         console.log("Searched by genre: "+ genre)
         //fetch(SERVICE_URL+'/books/'+genre) //change back to this later(response must be in List form!!)
-        fetch(SERVICE_URL+'/search')
+        fetch(SERVICE_URL+'/'+genre)
         .then(response => response.json())
         .then(data => {
-          console.log('Success:', data);
+          //console.log('Success:', data);
           this.setState(
             { books : data}
           )
