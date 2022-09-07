@@ -46,7 +46,7 @@ code {
   min-width: 400px;
 }
 .form-group {
-  padding: 20px 0px;
+  padding: 15px 0px;
 }
 .book-form label{
   font-weight: bold;
@@ -64,6 +64,7 @@ code {
 .book-form .formButtons .cancelButton{
   padding-left: 10px;
   background-color: red;
+  border-color: red;
 }
 .book-form .formButtons .cancelButton:hover {
   background-color: rgb(199, 20, 20);
@@ -127,7 +128,7 @@ hr.index-separator {
 }
 
 /* BookDetail.js */
-.div-center{
+.div-center-end{
   display: flex;
   /* justify-content: center;  align horizontal */
   align-items: center; /* align vertical */

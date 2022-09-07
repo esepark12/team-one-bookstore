@@ -31,20 +31,26 @@ const BookForm = () => {
         <h2>Add book</h2>
         <hr />
         <Form className="book-form" onSubmit={handleSubmit}>
-          <Form.Group controlId="bookTitle">
-            <Form.Label>Title:</Form.Label>
-            <Form.Control type="text" placeholder="Title" name="bookTitle"
-              value={title}  onChange={(e)=>setTitle(e.target.value)} required/>
+          <Form.Group className="form-group" controlId="bookTitle">
+          <Row xs={12}>
+            <Col xs={5} className="div-center-end"><Form.Label>Title:</Form.Label></Col>
+            <Col xs={7}><Form.Control type="text" placeholder="Title" name="bookTitle"
+              value={title}  onChange={(e)=>setTitle(e.target.value)} required/></Col>
+          </Row>
           </Form.Group>
-          <Form.Group controlId="publishedDate">
-            <Form.Label>Published Date:</Form.Label>
-            <Form.Control type="text" placeholder="Published Date" name="publishedDate"
-              value={publishedDate} onChange={(e)=>setPublishedDate(e.target.value)} required/>
+          <Form.Group className="form-group" controlId="publishedDate">
+          <Row xs={12}>
+            <Col xs={5} className="div-center-end"><Form.Label>Published Date:</Form.Label></Col>
+            <Col xs={7}><Form.Control type="text" placeholder="Published Date" name="publishedDate"
+              value={publishedDate} onChange={(e)=>setPublishedDate(e.target.value)} required/></Col>
+          </Row>
           </Form.Group>
-          <Form.Group controlId="bookGenre">
-            <Form.Label>Genre:</Form.Label>
-            <Form.Control type="text" onChange={(e)=>setGenre(e.target.value)} placeholder="Genre" name="bookGenre"
-              value={genre} required/>
+          <Form.Group className="form-group" controlId="bookGenre">
+          <Row xs={12}>
+            <Col xs={5} className="div-center-end"><Form.Label>Genre:</Form.Label></Col>
+            <Col xs={7}><Form.Control type="text" onChange={(e)=>setGenre(e.target.value)} placeholder="Genre" name="bookGenre"
+              value={genre} required/></Col>
+          </Row>
           </Form.Group>
           <Row className="formButtons">
             <Col>
